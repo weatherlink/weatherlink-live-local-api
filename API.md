@@ -1,37 +1,3 @@
-Table of Contents {#table-of-contents .TOCHeading}
-=================
-
-[Introduction
-2](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094259)
-
-[Current Conditions
-2](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094260)
-
-[Format of the Incoming HTTP Requests
-2](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094261)
-
-[Sample HTTP Request
-3](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094262)
-
-[Response String
-3](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094262)
-
-[Real Time Data Broadcast Through
-UDP](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094277)
-
-[Sample HTTP
-Request](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094278)
-
-[Response
-String](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094279)
-
-[Sample UDP Broadcast
-Response](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094279)
-
-[Appendix](file:///C:\Users\lavanyan\Downloads\20190226_Rev_0.62_WeatherLink_Live_Data_Structures.docx#_Toc2094281)
-
-Local API 5Format of Real-Time Broadcast Request56669
-
 **[Introduction]{.underline}**
 
 The WeatherLink Live **(WLL)** implements a HTTP interface for getting
