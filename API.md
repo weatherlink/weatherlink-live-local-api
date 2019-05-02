@@ -1,4 +1,4 @@
-**[Introduction]{.underline}**
+# Introduction
 
 The WeatherLink Live **(WLL)** implements a HTTP interface for getting
 current weather data. The response to a valid HTTP Get request is a JSON
@@ -8,19 +8,17 @@ are also returned. The interface can support continuous requests as
 often as every 10 seconds. Additionally, you can also start a real-time
 2.5 sec broadcast for wind speed and rain over UDP port 22222. The
 syntaxes of supported HTTP requests are described below. You can test
-this interface using a browser or the Windows curl utility. Sample
-Python code is included at this Git Hub repository -
-https://github.com/davisinstruments/WLL/LocalAPI/Samples.
+this interface using a browser or the Windows curl utility.
 
-**[Local API Current Conditions]{.underline}**
+# Local API Current Conditions
 
-**[Format of the Incoming HTTP Requests]{.underline}**
+### Format of the Incoming HTTP Requests
 
 Returns a JSON document with the current conditions record along with
 the transmitter ID, logical sensor ID, data structure type, device ID
 and current timestamp at which the request was made.
 
-**[Sample HTTP Request]{.underline}**
+#### Sample HTTP Request
 
 [**http://10.189.36.37:80/v1/current\_conditions**](http://10.189.36.37:80/v1/current_conditions)
 
@@ -29,7 +27,7 @@ or in CURL:
 **curl -X GET -H \"application/json\"
 <http://10.189.36.37:80/v1/current_conditions>**
 
-**[Response string]{.underline}**
+#### Response string
 
 The data\_structure\_type field can be used to determine what type of
 record a JSON object represents. Possible values include:
@@ -336,14 +334,14 @@ hours, response code "**400** -- Bad request" is sent.
 > Tells the WW to begin broadcasting UDP data and continue for 'xxx'
 > seconds
 
-**[Sample HTTP Request]{.underline}**
+#### Sample HTTP Request
 
 **curl -X GET -H \"application/json"
 http://10.95.35.21:80/v1/real\_time**
 
-**[Response String]{.underline}**
+#### Response String
 
-Sample HTTP Response for UDP Broadcast Request:
+#### Sample HTTP Response for UDP Broadcast Request
 
 {
 
@@ -361,7 +359,8 @@ Sample HTTP Response for UDP Broadcast Request:
 
 }
 
-**[Note:]{.underline}** Duration returned may be longer than the
+##### Note:
+Duration returned may be longer than the
 duration requested, if the broadcast is already enabled. If there is
 another request to extend the broadcast time before the previous request
 is completed, then
@@ -373,14 +372,14 @@ is completed, then
     interval remaining for the previous broadcast, then the broadcast
     time is reset to the new time and the data broadcast is continued
 
-**[Sample UDP Broadcast Response]{.underline}**
+#### Sample UDP Broadcast Response
 
 The data\_structure\_type field can be used to determine what type of
 record a JSON object represents. Possible values include:
 
 > 1 = ISS Rapid Update record
 
-First Broadcast Packet (with 3 ISS Sensors):
+###### First Broadcast Packet (with 3 ISS Sensors):
 
 {
 
@@ -533,7 +532,7 @@ over last 10 min
 
 }
 
-Second Broadcast Packet (with next 3 ISS Sensors):
+###### Second Broadcast Packet (with next 3 ISS Sensors):
 
 {
 
@@ -659,7 +658,7 @@ Second Broadcast Packet (with next 3 ISS Sensors):
 
 }
 
-Third Broadcast Packet (with remaining 2 ISS Sensors):
+###### Third Broadcast Packet (with remaining 2 ISS Sensors):
 
 {
 
@@ -747,17 +746,17 @@ Third Broadcast Packet (with remaining 2 ISS Sensors):
 
 }
 
-**[Appendix]{.underline}**
+#### Appendix
 
-**[Possible Error Responses with Improperly Formatted
-Requests]{.underline}**
+##### Possible Error Responses with Improperly Formatted
+Requests
 
-**[Sample HTTP Request]{.underline}**
+###### Sample HTTP Request
 
 **curl -X GET -H \"application/json\"
 http://10.189.36.37:80/v1/current\_condition**
 
-**[Response string]{.underline}**
+###### Response string
 
 {
 
@@ -773,12 +772,12 @@ http://10.189.36.37:80/v1/current\_condition**
 
 }
 
-**[Sample HTTP Request]{.underline}**
+###### Sample HTTP Request
 
 **curl -X GET -H \"application/json\"
 http://10.189.36.37:80/+v1/current\_condition**
 
-**[Response string]{.underline}**
+###### Response string
 
 {
 
@@ -794,14 +793,14 @@ http://10.189.36.37:80/+v1/current\_condition**
 
 }
 
-**[Sample HTTP Request]{.underline}**
+###### Sample HTTP Request
 
 **curl -X GET -H \"application/json\"
 http://10.189.36.37:80/+v1/current\_conditionHost:
 weatherlinklive-700017Accept:\*/\*Accept-Language: en-usConnection:
 keep-alive**
 
-**[Response string]{.underline}**
+###### Response string
 
 {
 
@@ -817,8 +816,7 @@ keep-alive**
 
 }
 
-**[Sample HTTP Request]{.underline}** (When there are no ISS Transmitter
-configured, but Real-Time broadcast request is made)
+###### Sample HTTP Request - When there are no ISS Transmitter configured, but Real-Time broadcast request is made)
 
 **curl -X GET -H \"application/json\"
 <http://10.189.36.37:80/v1/real_time> (or)**
@@ -826,7 +824,7 @@ configured, but Real-Time broadcast request is made)
 **curl -X GET -H \"application/json\"
 <http://10.189.36.37:80/v1/real_time?duration=xxx>**
 
-**[Response string]{.underline}**
+###### Response string
 
 {
 
@@ -842,6 +840,6 @@ configured, but Real-Time broadcast request is made)
 
 }
 
-**[Current Conditions HTTP Request -- Helper Library]{.underline}**
+###### Current Conditions HTTP Request -- Helper Library
 
-**[Real-Time UDP Broadcast Request -- Helper Library]{.underline}**
+###### Real-Time UDP Broadcast Request -- Helper Library
