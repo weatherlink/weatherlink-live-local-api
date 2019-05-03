@@ -42,89 +42,89 @@ record a JSON object represents. Possible values include:
 
 {
 
-    \"data\":
+    "data":
     {
-        \"did\":\"001D0A700002\",
-        \"ts\":1531754005,
-        \"conditions\": \[
+        "did":"001D0A700002",
+        "ts":1531754005,
+        "conditions": [
         {
-                \"lsid":48308, // logical sensor ID **(no unit)**
-                \"data\_structure\_type\":1, // data structure type **(no unit)**
-                \"txid\":1, // transmitter ID **(no unit)**
-                \"temp\": 62.7, // most recent valid temperature **(°F)**
-                \"hum\":1.1, // most recent valid humidity **(%RH)**
-                \"dew\_point\": -0.3, // **(°F)**
-                \"wet\_bulb\":null, // **(°F)**
-                \"heat\_index\": 5.5, // **(°F)**
-                \"wind\_chill\": 6.0, // **(°F)**
-                \"thw\_index\": 5.5, // **(°F)**
-                \"thsw\_index\": 5.5, // **(°F)**
-                \"wind\_speed\_last\":2,                           // most recent valid wind speed **(mph)**
-                \"wind\_dir\_last\":null,                          // most recent valid wind direction **(°degree)**
-                "wind\_speed\_avg\_last\_1\_min\":4                // average wind speed over last 1 min **(mph)**
-                "wind\_dir\_scalar\_avg\_last\_1\_min":15          // scalar average wind direction over last 1 min **(°degree)**
-                \"wind\_speed\_avg\_last\_2\_min\":42606,          // average wind speed over last 2 min **(mph)**
-                \"wind\_dir\_scalar\_avg\_last\_2\_min\": 170.7,   // scalar average wind direction over last 2 min **(°degree)**
-                \"wind\_speed\_hi\_last\_2\_min\":8,               // maximum wind speed over last 2 min **(mph)**
-                \"wind\_dir\_at\_hi\_speed\_last\_2\_min\":0.0,    // gust wind direction over last 2 min **(°degree)**
-                \"wind\_speed\_avg\_last\_10\_min\":42606,         // average wind speed over last 10 min **(mph)**
-                \"wind\_dir\_scalar\_avg\_last\_10\_min\": 4822.5, // scalar average wind direction over last 10 min **(°degree)**
-                \"wind\_speed\_hi\_last\_10\_min\":8,              // maximum wind speed over last 10 min **(mph)**
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":0.0,   // gust wind direction over last 10 min **(°degree)**
-                \"rain\_size\":2,                                  // rain collector type/size **(0: Reserved, 1: 0.01", 2: 0.2 mm, 3:  0.1 mm, 4: 0.001")**
-                \"rain\_rate\_last\":0,                            // most recent valid rain rate **(counts/hour)**
-                \"rain\_rate\_hi\":null,                           // highest rain rate over last 1 min **(counts/hour)**
-                \"rainfall\_last\_15\_min\":null,                  // total rain count over last 15 min **(counts)**
-                \"rain\_rate\_hi\_last\_15\_min\":0,               // highest rain rate over last 15 min **(counts/hour)**
-                \"rainfall\_last\_60\_min\":null,                  // total rain count for last 60 min **(counts)**
-                \"rainfall\_last\_24\_hr\":null,                   // total rain count for last 24 hours **(counts)**
-                \"rain\_storm\":null,                              // total rain count since last 24 hour long break in rain **(counts)**
-                \"rain\_storm\_start\_at\":null,                   // UNIX timestamp of current rain storm start **(seconds)**
-                \"solar\_rad\":747,                                // most recent solar radiation **(W/m²)**
-                \"uv\_index\":5.5,                                 // most recent UV index **(Index)**
-                \"rx\_state\":2,                                   // configured radio receiver state **(no unit)**
-                \"trans\_battery\_flag\":0,                        // transmitter battery status flag **(no unit)**
-                \"rainfall\_daily\":63,                            // total rain count since local midnight **(counts)**
-                \"rainfall\_monthly\":63,                          // total rain count since first of month at local midnight **(counts)**
-                \"rainfall\_year\":63,                             // total rain count since first of user-chosen month at local midnight **(counts)**
-                \"rain\_storm\_last\":null,                        // total rain count since last 24 hour long break in rain **(counts)**
-                \"rain\_storm\_last\_start\_at\":null,             // UNIX timestamp of last rain storm start **(sec)**
-                \"rain\_storm\_last\_end\_at\":null                // UNIX timestamp of last rain storm end **(sec)**
+                "lsid":48308,                                  // logical sensor ID **(no unit)**
+                "data_structure_type":1,                       // data structure type **(no unit)**
+                "txid":1,                                      // transmitter ID **(no unit)**
+                "temp": 62.7,                                  // most recent valid temperature **(°F)**
+                "hum":1.1,                                     // most recent valid humidity **(%RH)**
+                "dew_point": -0.3,                             // **(°F)**
+                "wet_bulb":null,                               // **(°F)**
+                "heat_index": 5.5,                             // **(°F)**
+                "wind_chill": 6.0,                             // **(°F)**
+                "thw_index": 5.5,                              // **(°F)**
+                "thsw_index": 5.5,                             // **(°F)**
+                "wind_speed_last":2,                           // most recent valid wind speed **(mph)**
+                "wind_dir_last":null,                          // most recent valid wind direction **(°degree)**
+                "wind_speed_avg_last_1_min":4                  // average wind speed over last 1 min **(mph)**
+                "wind_dir_scalar_avg_last_1_min":15            // scalar average wind direction over last 1 min **(°degree)**
+                "wind_speed_avg_last_2_min":42606,             // average wind speed over last 2 min **(mph)**
+                "wind_dir_scalar_avg_last_2_min": 170.7,       // scalar average wind direction over last 2 min **(°degree)**
+                "wind_speed_hi_last_2_min":8,                  // maximum wind speed over last 2 min **(mph)**
+                "wind_dir_at_hi_speed_last_2_min":0.0,         // gust wind direction over last 2 min **(°degree)**
+                "wind_speed_avg_last_10_min":42606,            // average wind speed over last 10 min **(mph)**
+                "wind_dir_scalar_avg_last_10_min": 4822.5,     // scalar average wind direction over last 10 min **(°degree)**
+                "wind_speed_hi_last_10_min":8,                 // maximum wind speed over last 10 min **(mph)**
+                "wind_dir_at_hi_speed_last_10_min":0.0,        // gust wind direction over last 10 min **(°degree)**
+                "rain_size":2,                                 // rain collector type/size **(0: Reserved, 1: 0.01", 2: 0.2 mm, 3:  0.1 mm, 4: 0.001")**
+                "rain_rate_last":0,                            // most recent valid rain rate **(counts/hour)**
+                "rain_rate_hi":null,                           // highest rain rate over last 1 min **(counts/hour)**
+                "rainfall_last_15_min":null,                   // total rain count over last 15 min **(counts)**
+                "rain_rate_hi_last_15_min":0,                  // highest rain rate over last 15 min **(counts/hour)**
+                "rainfall_last_60_min":null,                   // total rain count for last 60 min **(counts)**
+                "rainfall_last_24_hr":null,                    // total rain count for last 24 hours **(counts)**
+                "rain_storm":null,                             // total rain count since last 24 hour long break in rain **(counts)**
+                "rain_storm_start_at":null,                    // UNIX timestamp of current rain storm start **(seconds)**
+                "solar_rad":747,                               // most recent solar radiation **(W/m²)**
+                "uv_index":5.5,                                // most recent UV index **(Index)**
+                "rx_state":2,                                  // configured radio receiver state **(no unit)**
+                "trans_battery_flag":0,                        // transmitter battery status flag **(no unit)**
+                "rainfall_daily":63,                           // total rain count since local midnight **(counts)**
+                "rainfall_monthly":63,                         // total rain count since first of month at local midnight **(counts)**
+                "rainfall_year":63,                            // total rain count since first of user-chosen month at local midnight **(counts)**
+                "rain_storm_last":null,                        // total rain count since last 24 hour long break in rain **(counts)**
+                "rain_storm_last_start_at":null,               // UNIX timestamp of last rain storm start **(sec)**
+                "rain_storm_last_end_at":null                  // UNIX timestamp of last rain storm end **(sec)**
         },
         {
-                \"lsid":3187671188,
-                \"data\_structure\_type\":2,
-                \"txid\":3,
-                \"temp\_1\":null,                                 // most recent valid soil temp slot 1 **(°F)**
-                \"temp\_2\":null,                                 // most recent valid soil temp slot 2 **(°F)**
-                \"temp\_3\":null,                                 // most recent valid soil temp slot 3 **(°F)**
-                \"temp\_4\":null,                                 // most recent valid soil temp slot 4 **(°F)**
-                \"moist\_soil\_1\":null,                          // most recent valid soil moisture slot 1 **(\|cb\|)**
-                \"moist\_soil\_2\":null,                          // most recent valid soil moisture slot 2 **(\|cb\|)**
-                \"moist\_soil\_3\":null,                          // most recent valid soil moisture slot 3 **(\|cb\|)**
-                \"moist\_soil\_4\":null,                          // most recent valid soil moisture slot 4 **(\|cb\|)**
-                \"wet\_leaf\_1\":null,                            // most recent valid leaf wetness slot 1 **(no unit)**
-                \"wet\_leaf\_2\":null,                            // most recent valid leaf wetness slot 2 **(no unit)**
-                \"rx\_state\":null,                               // configured radio receiver state **(no unit)**
-                \"trans\_battery\_flag\":null                     // transmitter battery status flag **(no unit)**
+                "lsid":3187671188,
+                "data_structure_type":2,
+                "txid":3,
+                "temp_1":null,                                 // most recent valid soil temp slot 1 **(°F)**
+                "temp_2":null,                                 // most recent valid soil temp slot 2 **(°F)**
+                "temp_3":null,                                 // most recent valid soil temp slot 3 **(°F)**
+                "temp_4":null,                                 // most recent valid soil temp slot 4 **(°F)**
+                "moist_soil_1":null,                           // most recent valid soil moisture slot 1 **(\|cb\|)**
+                "moist_soil_2":null,                           // most recent valid soil moisture slot 2 **(\|cb\|)**
+                "moist_soil_3":null,                           // most recent valid soil moisture slot 3 **(\|cb\|)**
+                "moist_soil_4":null,                           // most recent valid soil moisture slot 4 **(\|cb\|)**
+                "wet_leaf_1":null,                             // most recent valid leaf wetness slot 1 **(no unit)**
+                "wet_leaf_2":null,                             // most recent valid leaf wetness slot 2 **(no unit)**
+                "rx_state":null,                               // configured radio receiver state **(no unit)**
+                "trans_battery_flag":null                      // transmitter battery status flag **(no unit)**
         },
         {
-                \"lsid":48307,
-                \"data\_structure\_type\":4,
-                \"temp\_in\":78.0,                                // most recent valid inside temp **(°F)**
-                \"hum\_in\":41.1,                                 // most recent valid inside humidity **(%RH)**
-                \"dew\_point\_in\":7.8,                           // **(°F)**
-                \"heat\_index\_in\":8.4                           // **(°F)**
+                "lsid":48307,
+                "data_structure_type":4,
+                "temp_in":78.0,                                // most recent valid inside temp **(°F)**
+                "hum_in":41.1,                                 // most recent valid inside humidity **(%RH)**
+                "dew_point_in":7.8,                            // **(°F)**
+                "heat_index_in":8.4                            // **(°F)**
         },
         {
-                \"lsid":48306,
-                \"data\_structure\_type\":3,
-                \"bar\_sea\_level\":30.008,                      // most recent bar sensor reading with elevation adjustment **(inches)**
-                \"bar\_trend\": null,                            // current 3 hour bar trend **(inches)**
-                \"bar\_absolute\":30.008                         // raw bar sensor reading **(inches)**
-        }\]
+                "lsid":48306,
+                "data_structure_type":3,
+                "bar_sea_level":30.008,                       // most recent bar sensor reading with elevation adjustment **(inches)**
+                "bar_trend": null,                            // current 3 hour bar trend **(inches)**
+                "bar_absolute":30.008                         // raw bar sensor reading **(inches)**
+        }]
     },
-    \"error\":null
+    "error":null
 }
 
 
@@ -163,12 +163,12 @@ hours, response code "**400** -- Bad request" is sent.
 #### Sample HTTP Response for UDP Broadcast Request
 
     {
-        \"data\":
+        "data":
         {
-                \"broadcast\_port\":22222,
-                \"duration\":70
+                "broadcast_port":22222,
+                "duration":70
         },
-        \"error\":null
+        "error":null
     }
 
 ##### Note:
@@ -195,179 +195,179 @@ record a JSON object represents. Possible values include:
 
 {
 
-        \"did\":\"001D0A700002\",
-        \"ts\":1532031640,
-        \"conditions\": \[
+        "did":"001D0A700002",
+        "ts":1532031640,
+        "conditions": [
         {
-                \"lsid":3187671188, // logical sensor ID **(no unit)**
-                \"data\_structure\_type\":1, // data structure type **(no unit)**
-                \"txid\":1, // transmitter ID **(no unit)**
-                \"wind\_speed\_last\":0.08, // most recent wind speed **(mph)**
-                \"wind\_dir\_last\":26.7, // most recent wind direction **(°degree)**
-                \"rain\_size\":2, // rain collector size/type **(0: Reserved, 1: 0.01", 2: 0.2 mm, 3: 0.1 mm, 4: 0.001")**
-                \"rain\_rate\_last\":0, // most recent rain rate **(count/hour)**
-                \"rain\_15\_min\":0, // total rain count over last 15 min **(counts)**
-                \"rain\_60\_min\":0, // total rain count over last 60 min **(counts)**
-                \"rain\_24\_hr\":0, // total rain count over last 24 hours **(counts)**
-                \"rain\_storm\":0, // total rain count since last 24 hour long break in rain **(counts)**
-                \"rain\_storm\_start\_at\":1553187540, // UNIX timestamp of current rain storm start **(seconds)**
-                \"rainfall\_daily\":63, // total rain count since local midnight **(counts)**
-                \"rainfall\_monthly\":63, // total rain count since first of the month at local midnight **(counts)**
-                \"rainfall\_year\":63, // total rain count since first of the user chosen month at local midnight **(counts)** 
-                \"wind\_speed\_hi\_last\_10\_min\":null, // maximum wind speed over last 10 min **(mph)**
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null // gust wind direction over last 10 min **(°degree)**
+                "lsid":3187671188,                           // logical sensor ID **(no unit)**
+                "data_structure_type":1,                     // data structure type **(no unit)**
+                "txid":1,                                    // transmitter ID **(no unit)**
+                "wind_speed_last":0.08,                      // most recent wind speed **(mph)**
+                "wind_dir_last":26.7,                        // most recent wind direction **(°degree)**
+                "rain_size":2,                               // rain collector size/type **(0: Reserved, 1: 0.01", 2: 0.2 mm, 3: 0.1 mm, 4: 0.001")**
+                "rain_rate_last":0,                          // most recent rain rate **(count/hour)**
+                "rain_15_min":0,                             // total rain count over last 15 min **(counts)**
+                "rain_60_min":0,                             // total rain count over last 60 min **(counts)**
+                "rain_24_hr":0,                              // total rain count over last 24 hours **(counts)**
+                "rain_storm":0,                              // total rain count since last 24 hour long break in rain **(counts)**
+                "rain_storm_start_at":1553187540,            // UNIX timestamp of current rain storm start **(seconds)**
+                "rainfall_daily":63,                         // total rain count since local midnight **(counts)**
+                "rainfall_monthly":63,                       // total rain count since first of the month at local midnight **(counts)**
+                "rainfall_year":63,                          // total rain count since first of the user chosen month at local midnight **(counts)** 
+                "wind_speed_hi_last_10_min":null,            // maximum wind speed over last 10 min **(mph)**
+                "wind_dir_at_hi_speed_last_10_min":null      // gust wind direction over last 10 min **(°degree)**
         },
         {
-                \"lsid":3422552209,
-                \"data\_structure\_type\":1,
-                \"txid\":2,
-                \"wind\_speed\_last\":0.07,
-                \"wind\_dir\_last\":30.0,
-                \"rain\_size\":2,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553187660,
-                \"rainfall\_daily\":10,
-                \"rainfall\_monthly\":10,
-                \"rainfall\_year\":10,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
+                "lsid":3422552209,
+                "data_structure_type":1,
+                "txid":2,
+                "wind_speed_last":0.07,
+                "wind_dir_last":30.0,
+                "rain_size":2,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553187660,
+                "rainfall_daily":10,
+                "rainfall_monthly":10,
+                "rainfall_year":10,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
         },
         {
-                \"lsid":3724542100,
-                \"data\_structure\_type\":1,
-                \"txid\":3,
-                \"wind\_speed\_last\":0.00,
-                \"wind\_dir\_last\":0.0,
-                \"rain\_size\":0,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553143540,
-                \"rainfall\_daily\":0,
-                \"rainfall\_monthly\":0,
-                \"rainfall\_year\":0,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
-        }\]
+                "lsid":3724542100,
+                "data_structure_type":1,
+                "txid":3,
+                "wind_speed_last":0.00,
+                "wind_dir_last":0.0,
+                "rain_size":0,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553143540,
+                "rainfall_daily":0,
+                "rainfall_monthly":0,
+                "rainfall_year":0,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
+        }]
 }
 
 ###### Second Broadcast Packet (with next 3 ISS Sensors):
 
 {
 
-        \"did\":\"001D0A700002\",
-        \"ts\":1532031640,
-        \"conditions\": \[
+        "did":"001D0A700002",
+        "ts":1532031640,
+        "conditions": [
         {
-                \"lsid":4261413012,
-                \"data\_structure\_type\":1,
-                \"txid\":4,
-                \"wind\_speed\_last\":0.00,
-                \"wind\_dir\_last\":0.0,
-                \"rain\_size\":0,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553143540,
-                \"rainfall\_daily\":0,
-                \"rainfall\_monthly\":0,
-                \"rainfall\_year\":0,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
+                "lsid":4261413012,
+                "data_structure_type":1,
+                "txid":4,
+                "wind_speed_last":0.00,
+                "wind_dir_last":0.0,
+                "rain_size":0,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553143540,
+                "rainfall_daily":0,
+                "rainfall_monthly":0,
+                "rainfall_year":0,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
         },
         {
-                \"lsid":2902458513,
-                \"data\_structure\_type\":1,
-                \"txid\":5,
-                \"wind\_speed\_last\":0.00,
-                \"wind\_dir\_last\":0.0,
-                \"rain\_size\":0,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553143540,
-                \"rainfall\_daily\":0,
-                \"rainfall\_monthly\":0,
-                \"rainfall\_year\":0,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
+                "lsid":2902458513,
+                "data_structure_type":1,
+                "txid":5,
+                "wind_speed_last":0.00,
+                "wind_dir_last":0.0,
+                "rain_size":0,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553143540,
+                "rainfall_daily":0,
+                "rainfall_monthly":0,
+                "rainfall_year":0,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
         },
         {
-                \"lsid":3187671185,
-                \"data\_structure\_type\":1,
-                \"txid\":6,
-                \"wind\_speed\_last\":0.00,
-                \"wind\_dir\_last\":0.0,
-                \"rain\_size\":0,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553143540,
-                \"rainfall\_daily\":0,
-                \"rainfall\_monthly\":0,
-                \"rainfall\_year\":0,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
-        }\]
+                "lsid":3187671185,
+                "data_structure_type":1,
+                "txid":6,
+                "wind_speed_last":0.00,
+                "wind_dir_last":0.0,
+                "rain_size":0,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553143540,
+                "rainfall_daily":0,
+                "rainfall_monthly":0,
+                "rainfall_year":0,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
+        }]
 }
 
 ###### Third Broadcast Packet (with remaining 2 ISS Sensors):
 
 {
 
-        \"did\":\"001D0A700002\",
-        \"ts\":1532031640,
-        \"conditions\": \[
+        "did":"001D0A700002",
+        "ts":1532031640,
+        "conditions": [
         {
-                \"lsid":4261413012,
-                \"data\_structure\_type\":1,
-                \"txid\":7,
-                \"wind\_speed\_last\":0.00,
-                \"wind\_dir\_last\":0.0,
-                \"rain\_size\":0,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553143540,
-                \"rainfall\_daily\":0,
-                \"rainfall\_monthly\":0,
-                \"rainfall\_year\":0,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
+                "lsid":4261413012,
+                "data_structure_type":1,
+                "txid":7,
+                "wind_speed_last":0.00,
+                "wind_dir_last":0.0,
+                "rain_size":0,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553143540,
+                "rainfall_daily":0,
+                "rainfall_monthly":0,
+                "rainfall_year":0,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
         },
         {
-                \"lsid":2902458513,
-                \"data\_structure\_type\":1,
-                \"txid\":8,
-                \"wind\_speed\_last\":0.00,
-                \"wind\_dir\_last\":0.0,
-                \"rain\_size\":0,
-                \"rain\_rate\_last\":0,
-                \"rain\_15\_min\":0,
-                \"rain\_60\_min\":0,
-                \"rain\_24\_hr\":0,
-                \"rain\_storm\":0,
-                \"rain\_storm\_start\_at\":1553143540,
-                \"rainfall\_daily\":0,
-                \"rainfall\_monthly\":0,
-                \"rainfall\_year\":0,
-                \"wind\_speed\_hi\_last\_10\_min\":null,
-                \"wind\_dir\_at\_hi\_speed\_last\_10\_min\":null
-        }\]
+                "lsid":2902458513,
+                "data_structure_type":1,
+                "txid":8,
+                "wind_speed_last":0.00,
+                "wind_dir_last":0.0,
+                "rain_size":0,
+                "rain_rate_last":0,
+                "rain_15_min":0,
+                "rain_60_min":0,
+                "rain_24_hr":0,
+                "rain_storm":0,
+                "rain_storm_start_at":1553143540,
+                "rainfall_daily":0,
+                "rainfall_monthly":0,
+                "rainfall_year":0,
+                "wind_speed_hi_last_10_min":null,
+                "wind_dir_at_hi_speed_last_10_min":null
+        }]
 
 }
 
@@ -385,10 +385,10 @@ http://10.189.36.37:80/v1/current\_condition**
 
 {
 
-    \"data\":null,
-    \"error\":{
+    "data":null,
+    "error":{
                 "code":404
-                "message":\"HTTP Page Not Found\"
+                "message":"HTTP Page Not Found"
     }
 }
 
@@ -401,10 +401,10 @@ http://10.189.36.37:80/+v1/current\_condition**
 
 {
 
-    \"data\":null,
-    \"error\":{
+    "data":null,
+    "error":{
                 "code":400
-                "message":\"HTTP Bad Request\"
+                "message":"HTTP Bad Request"
     }
 }
 
@@ -419,10 +419,10 @@ keep-alive**
 
 {
 
-    \"data\":null,
-    \"error\":{
+    "data":null,
+    "error":{
                 "code":414
-                "message": \"HTTP URI Too Long\"
+                "message": "HTTP URI Too Long"
     }
 }
 
@@ -438,10 +438,10 @@ keep-alive**
 
 {
 
-    \"data\":null,
-    \"error\":{
+    "data":null,
+    "error":{
                 "code":409
-                "message": \"No ISS Transmitters. Real Time broadcast not enabled\"
+                "message": "No ISS Transmitters. Real Time broadcast not enabled"
     }
 }
 
