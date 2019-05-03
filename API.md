@@ -12,6 +12,8 @@ this interface using a browser or the Windows curl utility.
 
 # Local API Current Conditions
 
+![GitHub Logo](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png)
+
 ### Format of the Incoming HTTP Requests
 
      http://<WeatherLink Live’s ip_addr:port>/v1/current_conditions
@@ -131,6 +133,7 @@ record a JSON object represents. Possible values include:
 
 # Real Time Data Broadcast through UDP
 
+![GitHub Logo](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/Real-TimeUDPBroadcast.png)
 
 If there are more than 3 ISS transmitters
 registered to the WeatherLink Live, the data will be sent in multiple
