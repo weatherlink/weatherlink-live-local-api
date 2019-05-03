@@ -14,22 +14,23 @@ this interface using a browser or the Windows curl utility.
 
 ### Format of the Incoming HTTP Requests
 
+     http://<WeatherLink Live’s ip_addr:port>/v1/current_conditions
+	
 Returns a JSON document with the current conditions record along with
 the transmitter ID, logical sensor ID, data structure type, device ID
 and current timestamp at which the request was made.
 
-#### Sample HTTP Request
+##### HTTP Request
 
-[**http://10.189.36.37:80/v1/current\_conditions**](http://10.189.36.37:80/v1/current_conditions)
+    http://10.189.36.37:80/v1/current_conditions
 
 or in CURL:
 
-**curl -X GET -H \"application/json\"
-<http://10.189.36.37:80/v1/current_conditions>**
+    curl -X GET -H \"application/json" http://10.189.36.37:80/v1/current_conditions
 
-#### Response string
+##### Response string
 
-The data\_structure\_type field can be used to determine what type of
+The data_structure_type field can be used to determine what type of
 record a JSON object represents. Possible values include:
 
 > 1 = ISS Current Conditions record
@@ -99,10 +100,10 @@ record a JSON object represents. Possible values include:
                 "temp_2":null,                                 // most recent valid soil temp slot 2 **(°F)**
                 "temp_3":null,                                 // most recent valid soil temp slot 3 **(°F)**
                 "temp_4":null,                                 // most recent valid soil temp slot 4 **(°F)**
-                "moist_soil_1":null,                           // most recent valid soil moisture slot 1 **(\|cb\|)**
-                "moist_soil_2":null,                           // most recent valid soil moisture slot 2 **(\|cb\|)**
-                "moist_soil_3":null,                           // most recent valid soil moisture slot 3 **(\|cb\|)**
-                "moist_soil_4":null,                           // most recent valid soil moisture slot 4 **(\|cb\|)**
+                "moist_soil_1":null,                           // most recent valid soil moisture slot 1 **(|cb|)**
+                "moist_soil_2":null,                           // most recent valid soil moisture slot 2 **(|cb|)**
+                "moist_soil_3":null,                           // most recent valid soil moisture slot 3 **(|cb|)**
+                "moist_soil_4":null,                           // most recent valid soil moisture slot 4 **(|cb|)**
                 "wet_leaf_1":null,                             // most recent valid leaf wetness slot 1 **(no unit)**
                 "wet_leaf_2":null,                             // most recent valid leaf wetness slot 2 **(no unit)**
                 "rx_state":null,                               // configured radio receiver state **(no unit)**
@@ -130,7 +131,7 @@ record a JSON object represents. Possible values include:
 
 # Real Time Data Broadcast through UDP
 
-##### Note:
+
 If there are more than 3 ISS transmitters
 registered to the WeatherLink Live, the data will be sent in multiple
 UDP packets. Note, data is sent every 2.5 seconds. Broadcast time is
@@ -140,27 +141,25 @@ hours, response code "**400** -- Bad request" is sent.
 
 ### Format of Real -- Time Broadcast Request
 
-> ***Live's ip\_addr:port \>/v1/real\_time***
->
-> Tells the WW to begin broadcasting UDP data and continue for 1200
-> seconds (20 minutes)
->
-> The default duration is 20 minutes.
->
-> (OR)
->
-> ***Live's ip\_addr:port \>/v1/real\_time?duration=xxx***
->
-> Tells the WW to begin broadcasting UDP data and continue for 'xxx'
-> seconds
+> ***Live's ip_addr:port >/v1/real_time***
 
-#### Sample HTTP Request
+ Tells the WW to begin broadcasting UDP data and continue for 1200
+ seconds (20 minutes)
 
-***curl -X GET -H \"application/json" http://10.95.35.21:80/v1/real\_time***
+ The default duration is 20 minutes.
 
-#### Response String
+ (OR)
 
-#### Sample HTTP Response for UDP Broadcast Request
+> ***Live's ip_addr:port >/v1/real_time?duration=xxx***
+
+ Tells the WW to begin broadcasting UDP data and continue for 'xxx'
+ seconds
+
+#### HTTP Request
+
+***curl -X GET -H "application/json" http://10.95.35.21:80/v1/real_time***
+
+##### HTTP Response for UDP Broadcast Request
 
     {
         "data":
@@ -184,9 +183,9 @@ is completed, then
     interval remaining for the previous broadcast, then the broadcast
     time is reset to the new time and the data broadcast is continued
 
-#### Sample UDP Broadcast Response
+##### UDP Broadcast Response
 
-The data\_structure\_type field can be used to determine what type of
+The data_structure_type field can be used to determine what type of
 record a JSON object represents. Possible values include:
 
 > 1 = ISS Rapid Update record
@@ -376,10 +375,9 @@ record a JSON object represents. Possible values include:
 ##### Possible Error Responses with Improperly Formatted
 Requests
 
-###### Sample HTTP Request
+###### HTTP Request
 
-**curl -X GET -H \"application/json\"
-http://10.189.36.37:80/v1/current\_condition**
+     curl -X GET -H "application/json "http://10.189.36.37:80/v1/current_condition
 
 ###### Response string
 
@@ -392,10 +390,9 @@ http://10.189.36.37:80/v1/current\_condition**
     }
 }
 
-###### Sample HTTP Request
+###### HTTP Request
 
-**curl -X GET -H \"application/json\"
-http://10.189.36.37:80/+v1/current\_condition**
+    curl -X GET -H "application/json" http://10.189.36.37:80/+v1/current_condition
 
 ###### Response string
 
@@ -408,12 +405,9 @@ http://10.189.36.37:80/+v1/current\_condition**
     }
 }
 
-###### Sample HTTP Request
+###### HTTP Request
 
-**curl -X GET -H \"application/json\"
-http://10.189.36.37:80/+v1/current\_conditionHost:
-weatherlinklive-700017Accept:\*/\*Accept-Language: en-usConnection:
-keep-alive**
+     curl -X GET -H "application/json" http://10.189.36.37:80/+v1/current_condition Host: weatherlinklive-700017Accept:*/*Accept-Language: en-usConnection:keep-alive
 
 ###### Response string
 
@@ -426,13 +420,13 @@ keep-alive**
     }
 }
 
-###### Sample HTTP Request - When there are no ISS Transmitter configured, but Real-Time broadcast request is made)
+###### HTTP Request - When there are no ISS Transmitter configured, but Real-Time broadcast request is made)
 
-**curl -X GET -H \"application/json\"
-<http://10.189.36.37:80/v1/real_time> (or)**
+    curl -X GET -H "application/json" http://10.189.36.37:80/v1/real_time
+ 
+(or)
 
-**curl -X GET -H \"application/json\"
-<http://10.189.36.37:80/v1/real_time?duration=xxx>**
+    curl -X GET -H "application/json" http://10.189.36.37:80/v1/real_time?duration=xxx
 
 ###### Response string
 
