@@ -26,7 +26,7 @@ and current timestamp at which the request was made.
 
 or in CURL:
 
-    curl -X GET -H \"application/json" http://10.189.36.37:80/v1/current_conditions
+    curl -X GET -H "application/json" http://10.189.36.37:80/v1/current_conditions
 
 ##### Response string
 
@@ -141,7 +141,7 @@ hours, response code "**400** -- Bad request" is sent.
 
 ### Format of Real -- Time Broadcast Request
 
-> ***Live's ip_addr:port >/v1/real_time***
+    Live's ip_addr:port >/v1/real_time
 
  Tells the WW to begin broadcasting UDP data and continue for 1200
  seconds (20 minutes)
@@ -150,14 +150,14 @@ hours, response code "**400** -- Bad request" is sent.
 
  (OR)
 
-> ***Live's ip_addr:port >/v1/real_time?duration=xxx***
+    Live's ip_addr:port >/v1/real_time?duration=xxx
 
  Tells the WW to begin broadcasting UDP data and continue for 'xxx'
  seconds
 
-#### HTTP Request
+##### HTTP Request
 
-***curl -X GET -H "application/json" http://10.95.35.21:80/v1/real_time***
+    curl -X GET -H "application/json" http://10.95.35.21:80/v1/real_time
 
 ##### HTTP Response for UDP Broadcast Request
 
@@ -170,7 +170,7 @@ hours, response code "**400** -- Bad request" is sent.
         "error":null
     }
 
-##### Note:
+###### Note:
 Duration returned may be longer than the
 duration requested, if the broadcast is already enabled. If there is
 another request to extend the broadcast time before the previous request
@@ -370,10 +370,9 @@ record a JSON object represents. Possible values include:
 
 }
 
-#### Appendix
+# Appendix
 
-##### Possible Error Responses with Improperly Formatted
-Requests
+#### Examples of Possible Error Responses with Improperly Formatted Requests
 
 ###### HTTP Request
 
@@ -420,7 +419,7 @@ Requests
     }
 }
 
-###### HTTP Request - When there are no ISS Transmitter configured, but Real-Time broadcast request is made)
+###### HTTP Request - (When there are no ISS Transmitter configured, but Real-Time broadcast request is made)
 
     curl -X GET -H "application/json" http://10.189.36.37:80/v1/real_time
  
@@ -439,7 +438,7 @@ Requests
     }
 }
 
-###### Current Conditions HTTP Request -- Helper Module
+#### Current Conditions HTTP Request -- Helper Module
 
 ```
 import time
@@ -477,7 +476,7 @@ if __name__ == "__main__":
     main()    
 ```
 
-###### Real-Time UDP Broadcast Request -- Helper Module
+#### Real-Time UDP Broadcast Request -- Helper Module
 
 ```
 from socket import *
