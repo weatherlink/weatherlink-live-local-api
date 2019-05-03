@@ -8,11 +8,11 @@ are also returned. The interface can support continuous requests as
 often as every 10 seconds. Additionally, you can also start a real-time
 2.5 sec broadcast for wind speed and rain over UDP port 22222. The
 syntaxes of supported HTTP requests are described below. You can test
-this interface using a browser or the Windows curl utility.
+this interface using a browser or the Windows cURL utility.
 
 # Local API Current Conditions
 
-![](https://weatherlink.github.io/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png)
+![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png)
 
 ### Format of the Incoming HTTP Requests
 
