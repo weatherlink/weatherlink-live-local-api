@@ -451,6 +451,8 @@ import json
 from multiprocessing import Process
 import requests
 
+current_conditions_url = 'http://10.95.35.7:80/v1/current_conditions'
+
 def make_request_using_socket(url):
         try:
             resp = requests.get(url)
@@ -460,15 +462,16 @@ def make_request_using_socket(url):
                print (json_data["error"])
             else:
                print (json_data)
-	    except ConnectionRefusedError:
+        except ConnectionRefusedError:
             print("Encountered 'ConnectionRefusedError'. Please Retry")
         except TimeoutError:        
             print("Encountered 'TimeoutError'. Please Retry")
 			
              
 def main():
+    global current_conditions_url
     try:            
-        make_request_using_socket('http://192.168.1.15:80/v1/current_conditions')
+        make_request_using_socket(current_conditions_url)
         time.sleep(5)
     except ConnectionRefusedError:
         print("Encountered 'ConnectionRefusedError'. Please Retry")
@@ -476,7 +479,7 @@ def main():
         print("Encountered 'TimeoutError'. Please Retry")		    
           
 if __name__ == "__main__":
-    main()    
+    main()
 ```
 
 #### Real-Time UDP Broadcast Request -- Helper Module
@@ -488,26 +491,26 @@ import time
 import requests
 import json
 
-urllist = []
+URL = 'http://10.95.35.7:80/v1/real_time?duration=20'
 
-if __name__ == "__main__":
-    #while 1:   
-        UDP_IP = '192.168.1.15'
+def main():
+        global URL
         UDP_PORT = 22222
         comsocket = socket(AF_INET, SOCK_DGRAM)
         comsocket.bind(('',22222))
         comsocket.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
-        resp = requests.get('http://192.168.1.15:80/v1/real_time?duration=20')
-        start_time = time.time()
+        resp = requests.get(URL)
         while 1:
             print("HTTP Response Code:", resp)
             data, wherefrom = comsocket.recvfrom(2048)
-            elapsed_time = time.time()
             json_data = json.loads(data.decode("utf-8"))        
             if json_data["conditions"] == None:
                 print (json_data["error"])
             else:
                 print (json_data)
         
-        comsocket.close()        
+        comsocket.close()
+
+if __name__ == "__main__":
+    main()       
 ```
