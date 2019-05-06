@@ -12,7 +12,7 @@ this interface using a browser or the Windows cURL utility.
 
 # Local API Current Conditions
 
-<img src ="https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png">
+<img src ="Images/CurrentConditions.png">
 
 ### Format of the Incoming HTTP Requests
 
