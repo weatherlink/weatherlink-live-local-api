@@ -44,6 +44,7 @@ record a JSON object represents. Possible values include:
 > 4 = LSS Temp/Hum Current Conditions record
 
 {
+
     "data":
     {
         "did":"001D0A700002",
