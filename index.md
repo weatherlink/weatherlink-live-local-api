@@ -13,6 +13,9 @@ this interface using a browser or the Windows cURL utility.
 For Local API to work, the WeatherLink Live and the device through which the Current Conditions and Real-Time data broadcast are
 requested have to be on the same local network.
 
+For details on programatically finding WeatherLink Live devices on the local network, see [Device Discovery](discovery.html)
+
+
 # Local API Current Conditions
 
 ![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png?raw=true)
