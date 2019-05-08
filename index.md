@@ -10,6 +10,9 @@ often as every 10 seconds. Additionally, you can also start a real-time
 syntaxes of supported HTTP requests are described below. You can test
 this interface using a browser or the Windows cURL utility.
 
+For Local API to work, the WeatherLink Live and the device through which the Current Conditions and Real-Time data broadcast are
+requested have to be on the same local network.
+
 # Local API Current Conditions
 
 ![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png?raw=true)
@@ -441,7 +444,7 @@ record a JSON object represents. Possible values include:
     }
 }
 
-#### Current Conditions HTTP Request -- Helper Module
+#### Current Conditions HTTP Request -- Helper Module [Python]
 
 ```
 import time
@@ -482,7 +485,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### Real-Time UDP Broadcast Request -- Helper Module
+#### Real-Time UDP Broadcast Request -- Helper Module [Python]
 
 ```
 from socket import *
