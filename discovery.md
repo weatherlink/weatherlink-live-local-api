@@ -84,3 +84,6 @@ On those networks, device discovery may not function correctly.
 ### WiFi
 When the WeatherLink Live is connected via WiFi, standalone hostname queries for `weatherlinklive-<device-id>.local` may fail to resolve.
 If this occurs, you may need to first perform a full service discovery query before the device will respond with its IP address.
+
+Additionally, due to a bug in the WiFi module's implementation of mDNS, it will not respond to mDNS queries with an ID greater than 4.
+To avoid this issue, set the mDNS query ID to 0.
