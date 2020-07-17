@@ -136,6 +136,18 @@ record a JSON object represents. Possible values include:
     "error":null
 }
 
+##### Receiver State
+The `rx_state` field describes the radio reception state for the transmitter.
+
+| Value | Name               | Meaning                                                                                         | VP2 Console Display Equivalent |
+| ----- | ------------------ | ----------------------------------------------------------------------------------------------- | ------------------------------ |
+| 0     | Synched & Tracking | Transmitter has been acquired and is actively being received.                                   | Blinking "X"                   |
+| 1     | Synched            | Transmitter has been acquired, but we have missed 1-14 packets in a row.                        | "X" not blinking when expected |
+| 2     | Scanning           | Transmitter has not been acquired yet, or we've lost it (more than 15 missed packets in a row). | "R" reacquisition mode         |
+
+In the "Synched" state the radio expects to hear from the transmitter in the future. The radio can miss a packet due to external radio interference or if two transmitters happen to transmit at the same time and the radio can only receive one of the packets.
+
+In the "Scanning" state the radio does not have any synchronization with the transmitter. The radio will actively look for unacquired transmitters in this state.
 
 # Real Time Data Broadcast through UDP
 
