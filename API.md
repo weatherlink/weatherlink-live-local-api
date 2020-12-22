@@ -64,8 +64,8 @@ record a JSON object represents. Possible values include:
                 "thsw_index": 5.5,                             // **(°F)**
                 "wind_speed_last":2,                           // most recent valid wind speed **(mph)**
                 "wind_dir_last":null,                          // most recent valid wind direction **(°degree)**
-                "wind_speed_avg_last_1_min":4                  // average wind speed over last 1 min **(mph)**
-                "wind_dir_scalar_avg_last_1_min":15            // scalar average wind direction over last 1 min **(°degree)**
+                "wind_speed_avg_last_1_min":4,                 // average wind speed over last 1 min **(mph)**
+                "wind_dir_scalar_avg_last_1_min":15,           // scalar average wind direction over last 1 min **(°degree)**
                 "wind_speed_avg_last_2_min":42606,             // average wind speed over last 2 min **(mph)**
                 "wind_dir_scalar_avg_last_2_min": 170.7,       // scalar average wind direction over last 2 min **(°degree)**
                 "wind_speed_hi_last_2_min":8,                  // maximum wind speed over last 2 min **(mph)**
@@ -399,7 +399,7 @@ record a JSON object represents. Possible values include:
 
     "data":null,
     "error":{
-                "code":404
+                "code":404,
                 "message":"HTTP Page Not Found"
     }
 }
@@ -414,7 +414,7 @@ record a JSON object represents. Possible values include:
 
     "data":null,
     "error":{
-                "code":400
+                "code":400,
                 "message":"HTTP Bad Request"
     }
 }
@@ -429,7 +429,7 @@ record a JSON object represents. Possible values include:
 
     "data":null,
     "error":{
-                "code":414
+                "code":414,
                 "message": "HTTP URI Too Long"
     }
 }
@@ -448,7 +448,7 @@ record a JSON object represents. Possible values include:
 
     "data":null,
     "error":{
-                "code":409
+                "code":409,
                 "message": "No ISS Transmitters. Real Time broadcast not enabled"
     }
 }
