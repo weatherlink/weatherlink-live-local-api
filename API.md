@@ -10,9 +10,15 @@ often as every 10 seconds. Additionally, you can also start a real-time
 syntaxes of supported HTTP requests are described below. You can test
 this interface using a browser or the Windows cURL utility.
 
+For Local API to work, the WeatherLink Live and the device through which the Current Conditions and Real-Time data broadcast are
+requested have to be on the same local network.
+
+For details on programatically finding WeatherLink Live devices on the local network, see [Device Discovery](discovery.html)
+
+
 # Local API Current Conditions
 
-![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png)
+![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png?raw=true)
 
 ### Format of the Incoming HTTP Requests
 
@@ -145,7 +151,7 @@ In the "Scanning" state the radio does not have any synchronization with the tra
 
 # Real Time Data Broadcast through UDP
 
-![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/Real-TimeUDPBroadcast.png)
+![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/Real-TimeUDPBroadcast.png?raw=true)
 
 If there are more than 3 ISS transmitters
 registered to the WeatherLink Live, the data will be sent in multiple
@@ -448,7 +454,7 @@ record a JSON object represents. Possible values include:
         }
     }
 
-#### Current Conditions HTTP Request -- Helper Module
+#### Current Conditions HTTP Request -- Helper Module [Python]
 
 ```
 import time
@@ -467,15 +473,16 @@ def make_request_using_socket(url):
                print (json_data["error"])
             else:
                print (json_data)
-	    except ConnectionRefusedError:
+        except ConnectionRefusedError:
             print("Encountered 'ConnectionRefusedError'. Please Retry")
         except TimeoutError:        
             print("Encountered 'TimeoutError'. Please Retry")
 			
              
 def main():
+    global current_conditions_url
     try:            
-        make_request_using_socket('http://192.168.1.15:80/v1/current_conditions')
+        make_request_using_socket(current_conditions_url)
         time.sleep(5)
     except ConnectionRefusedError:
         print("Encountered 'ConnectionRefusedError'. Please Retry")
@@ -483,10 +490,10 @@ def main():
         print("Encountered 'TimeoutError'. Please Retry")		    
           
 if __name__ == "__main__":
-    main()    
+    main()
 ```
 
-#### Real-Time UDP Broadcast Request -- Helper Module
+#### Real-Time UDP Broadcast Request -- Helper Module [Python]
 
 ```
 from socket import *
@@ -495,26 +502,26 @@ import time
 import requests
 import json
 
-urllist = []
+URL = 'http://10.95.35.7:80/v1/real_time?duration=20'
 
-if __name__ == "__main__":
-    #while 1:   
-        UDP_IP = '192.168.1.15'
+def main():
+        global URL
         UDP_PORT = 22222
         comsocket = socket(AF_INET, SOCK_DGRAM)
         comsocket.bind(('',22222))
         comsocket.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
-        resp = requests.get('http://192.168.1.15:80/v1/real_time?duration=20')
-        start_time = time.time()
+        resp = requests.get(URL)
         while 1:
             print("HTTP Response Code:", resp)
             data, wherefrom = comsocket.recvfrom(2048)
-            elapsed_time = time.time()
             json_data = json.loads(data.decode("utf-8"))        
             if json_data["conditions"] == None:
                 print (json_data["error"])
             else:
                 print (json_data)
         
-        comsocket.close()        
+        comsocket.close()
+
+if __name__ == "__main__":
+    main()       
 ```
