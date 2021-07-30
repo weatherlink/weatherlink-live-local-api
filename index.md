@@ -149,6 +149,12 @@ In the "Synched" state the radio expects to hear from the transmitter in the fut
 
 In the "Scanning" state the radio does not have any synchronization with the transmitter. The radio will actively look for unacquired transmitters in this state.
 
+##### Transmitter Battery Status
+The `trans_battery_flag` field describes the current status of the transmitter's CR-123A battery.
+A value of `1` indicates the battery is low, while a value of `0` indicates that the battery is okay.
+
+Note: the battery status measurement may cross over from low to okay and back again throughout the day depending on the state of the solar panel and super-capacitor. For best results, check the battery status when the solar panel is not producing power.
+
 # Real Time Data Broadcast through UDP
 
 ![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/Real-TimeUDPBroadcast.png?raw=true)
