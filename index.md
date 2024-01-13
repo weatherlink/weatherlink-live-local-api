@@ -15,7 +15,6 @@ requested have to be on the same local network.
 
 For details on programatically finding WeatherLink Live devices on the local network, see [Device Discovery](discovery.html)
 
-
 # Local API Current Conditions
 
 ![](https://github.com/weatherlink/weatherlink-live-local-api/blob/master/Images/CurrentConditions.png?raw=true)
@@ -55,7 +54,7 @@ record a JSON object represents. Possible values include:
 >
 > 4 = LSS Temp/Hum Current Conditions record
 
-```json
+```javascript
 {
   "data": {
     "did": "001D0A700002",
@@ -144,6 +143,7 @@ record a JSON object represents. Possible values include:
 ```
 
 ##### Receiver State
+
 The `rx_state` field describes the radio reception state for the transmitter.
 
 | Value | Name               | Meaning                                                                                         | VP2 Console Display Equivalent |
@@ -157,6 +157,7 @@ In the "Synched" state the radio expects to hear from the transmitter in the fut
 In the "Scanning" state the radio does not have any synchronization with the transmitter. The radio will actively look for unacquired transmitters in this state.
 
 ##### Transmitter Battery Status
+
 The `trans_battery_flag` field describes the current status of the transmitter's CR-123A battery.
 A value of `1` indicates the battery is low, while a value of `0` indicates that the battery is okay.
 
@@ -201,7 +202,7 @@ curl -X GET -H "application/json" http://10.95.35.21:80/v1/real_time
 
 ##### HTTP Response for UDP Broadcast Request
 
-```json
+```javascript
 {
   "data": {
     "broadcast_port": 22222,
@@ -234,7 +235,7 @@ record a JSON object represents. Possible values include:
 
 ###### First Broadcast Packet (with 3 ISS Sensors):
 
-```json
+```javascript
 {
   "did": "001D0A700002",
   "ts": 1532031640,
@@ -302,7 +303,7 @@ record a JSON object represents. Possible values include:
 
 ###### Second Broadcast Packet (with next 3 ISS Sensors):
 
-```json
+```javascript
 {
   "did": "001D0A700002",
   "ts": 1532031640,
@@ -370,7 +371,7 @@ record a JSON object represents. Possible values include:
 
 ###### Third Broadcast Packet (with remaining 2 ISS Sensors):
 
-```json
+```javascript
 {
   "did": "001D0A700002",
   "ts": 1532031640,
@@ -429,7 +430,7 @@ curl -X GET -H "application/json "http://10.189.36.37:80/v1/current_condition
 
 ###### Response string
 
-```json
+```javascript
 {
   "data": null,
   "error": {
@@ -447,7 +448,7 @@ curl -X GET -H "application/json" http://10.189.36.37:80/+v1/current_condition
 
 ###### Response string
 
-```json
+```javascript
 {
   "data": null,
   "error": {
@@ -463,7 +464,7 @@ curl -X GET -H "application/json" http://10.189.36.37:80/+v1/current_condition
 
 ###### Response string
 
-```json
+```javascript
 {
   "data": null,
   "error": {
@@ -487,7 +488,7 @@ curl -X GET -H "application/json" http://10.189.36.37:80/v1/real_time?duration=x
 
 ###### Response string
 
-```json
+```javascript
 {
   "data": null,
   "error": {
