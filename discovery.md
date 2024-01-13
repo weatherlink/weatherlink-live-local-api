@@ -73,7 +73,7 @@ sudo apt-get install avahi-utils -y
 
 You can then use `avahi-browse` to discover service instances:
 
-```
+```console
 pi@zero:~$ avahi-browse -d local _weatherlinklive._tcp --resolve -t
 +  wlan0 IPv4 weatherlinklive-700008                              _weatherlinklive._tcp      local
 =  wlan0 IPv4 weatherlinklive-700008                              _weatherlinklive._tcp      local
